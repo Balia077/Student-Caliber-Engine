@@ -25,10 +25,10 @@ const DownloadButton = () => {
   };
 
   return (
-    <div className="flex justify-center mt-10">
+    <div className="flex justify-center mt-8 sm:mt-10">
       <button
         onClick={handleDownload}
-        className="px-8 py-4 bg-white text-black rounded-2xl font-bold hover:scale-105 transition"
+        className="w-full sm:w-auto px-6 sm:px-8 py-3.5 sm:py-4 bg-white text-black rounded-xl sm:rounded-2xl font-bold text-sm sm:text-base hover:scale-105 hover:bg-zinc-100 transition"
       >
         Download PDF Report
       </button>
