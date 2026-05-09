@@ -3,6 +3,7 @@ const express = require("express");
 const router = express.Router();
 
 const upload = require("../middlewares/upload.middleware");
+const protect = require("../middlewares/auth.middleware");
 
 const {
   uploadResumes,
@@ -11,10 +12,11 @@ const {
 
 router.post(
   "/upload",
-  upload.array("resumes", 20),
+  protect,
+  upload.array("resumes", 30),
   uploadResumes
 );
 
-router.get("/report", downloadReport);
+router.get("/report", protect, downloadReport);
 
 module.exports = router;

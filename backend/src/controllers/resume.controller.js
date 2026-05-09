@@ -22,7 +22,8 @@ const uploadResumes = async (req, res) => {
     const results = [];
 
     for (const file of files) {
-      const parsedData = await parseResume(file.path);
+      // FIX: pass file.originalname as second arg so fileName is never undefined
+      const parsedData = await parseResume(file.path, file.originalname);
 
       const analysis = scoreResume(parsedData.text);
 
