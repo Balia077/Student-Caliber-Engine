@@ -1,6 +1,8 @@
 const express = require('express');
 const cors = require('cors');
 const resumeRoutes = require('./routes/resume.routes');
+const authRoutes = require("./routes/auth.routes");
+
 const { resume } = require('pdfkit');
 
 const app = express();
@@ -14,5 +16,7 @@ app.get('/', (req, res) => {
 });
 
 app.use("/api/resumes", resumeRoutes);
+app.use("/api/auth", authRoutes);
+
 
 module.exports = app;
