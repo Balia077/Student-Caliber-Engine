@@ -7,7 +7,7 @@ const { resume } = require('pdfkit');
 
 const app = express();
 
-const cors = require("cors");
+
 
 app.use(
   cors({
