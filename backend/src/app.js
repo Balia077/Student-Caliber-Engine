@@ -7,7 +7,16 @@ const { resume } = require('pdfkit');
 
 const app = express();
 
-app.use(cors());
+const cors = require("cors");
+
+app.use(
+  cors({
+    origin:
+      "https://student-caliber-engine-blond.vercel.app",
+    credentials: true,
+  })
+);
+
 app.use(express.json());
 app.use(express.urlencoded({ extended:true }));
 
