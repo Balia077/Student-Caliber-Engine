@@ -6,8 +6,7 @@ const DownloadButton = () => {
       <button
         onClick={() =>
           window.open(
-            `${api.defaults.baseURL}/report`,
-            "_blank"
+            api.get("/report/download"),
           )
         }
         className="px-8 py-4 bg-white text-black rounded-2xl font-bold hover:scale-105 transition"
